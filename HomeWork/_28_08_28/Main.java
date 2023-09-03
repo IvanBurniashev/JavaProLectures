@@ -7,7 +7,8 @@ public class Main {
 Найти сумму всех элементов в массиве, которые делятся на 3 и одновременно не делятся на 5.
 Найти в массиве наибольшую сумму подряд идущих элементов.
          */
-        int[] Array = {-3,5,10,1,-4,3,9,6,12,15,30};
-        System.out.println("Hello Word!");
+        int[] Array = {-3, 5, 10, 1, -4, 3, 9, 6, 12, -15, 30};
+        Calc calc = new Calc(Array);
+        System.out.printf(""calc.average());
     }
 }
