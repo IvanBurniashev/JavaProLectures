@@ -11,7 +11,7 @@ public class Main {
         int[] Array = {-3, 5, 10, 1, -4, 3, 9, 6, 12, -15, 30, 100};
         Calc calc = new Calc(Array);
 //        System.out.printf(""calc.average());
-        System.out.println(Math.floor(calc.average()));
+        System.out.println(calc.average());
         System.out.println(calc.summ());
         System.out.println(calc.maxSumm());
     }
