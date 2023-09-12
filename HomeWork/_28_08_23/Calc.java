@@ -1,4 +1,4 @@
-package JavaProLectures.HomeWork._28_08_28;
+package JavaProLectures.HomeWork._28_08_23;
 
 public class Calc {
     private int[] Array;
