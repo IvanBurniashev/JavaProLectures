@@ -29,14 +29,16 @@ public class Main {
          *     }
          * }
          */
-        public static void main (String[] args){
-            FixedBalanceAccount fixedAccount = new FixedBalanceAccount("123456", 1000);
-            CreditAccount creditAccount = new CreditAccount("789012", -500, 1000);
+        FixedBalanceAccount fixedAccount = new FixedBalanceAccount("123456", 1000);
+        CreditAccount creditAccount = new CreditAccount("789012", -500, 1000);
 
-            fixedAccount.transfer(creditAccount, 300);
-            System.out.println("Fixed account balance: " + fixedAccount.getAccountBalance();
-            System.out.println("Credit account balance: " + creditAccount.getAccountBalance());
-        }
-
+        fixedAccount.transfer(creditAccount, 1100);
+        System.out.println("Fixed account #" + fixedAccount.getAccountNumber() + " balance: " + fixedAccount.getAccountBalance());
+        System.out.println("Credit account #" + creditAccount.getAccountNumber() + " balance: " + creditAccount.getAccountBalance());
+        System.out.println("=====================================================");
+        creditAccount.transfer(fixedAccount, 1000);
+        System.out.println("Credit account #" + creditAccount.getAccountNumber() + " balance: " + creditAccount.getAccountBalance());
+        System.out.println("Fixed account #" + fixedAccount.getAccountNumber() + " balance: " + fixedAccount.getAccountBalance());
     }
+
 }

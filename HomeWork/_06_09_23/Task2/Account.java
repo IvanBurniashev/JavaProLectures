@@ -9,7 +9,16 @@ public abstract class Account {
         this.accountBalance = accountBalance;
     }
 
-    public double getAccountBalance() {
+    protected void setAccountBalance(double accountBalance) {
+        this.accountBalance = accountBalance;
+    }
+
+    protected double getAccountBalance() {
         return accountBalance;
     }
+
+    protected String getAccountNumber() {
+        return accountNumber;
+    }
+
 }
