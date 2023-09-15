@@ -1,4 +1,4 @@
-package JavaProLectures.HomeWork._28_08_23;
+package HomeWork._28_08_23;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package JavaProLectures.ClassWork;
+package ClassWork;
 
 public interface Resizable {
 

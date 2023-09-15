@@ -1,4 +1,4 @@
-package JavaProLectures.HomeWork._30_08_23;
+package HomeWork._30_08_23;
 
 public class Electronics extends Product {
     private PowerSupplyType powerSupplyType;

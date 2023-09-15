@@ -1,4 +1,4 @@
-package JavaProLectures.HomeWork._30_08_23;
+package HomeWork._30_08_23;
 
 public abstract class Product {
     private static int globalId = 1;

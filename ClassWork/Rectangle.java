@@ -1,4 +1,4 @@
-package JavaProLectures.ClassWork;
+package ClassWork;
 
 public class Rectangle extends Shape implements Resizable{
     public Rectangle(double length, double width) {

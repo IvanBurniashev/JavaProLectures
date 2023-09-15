@@ -1,4 +1,4 @@
-package JavaProLectures.ClassWork;
+package ClassWork;
 
 public class Main {
     public static void main(String[] args) {

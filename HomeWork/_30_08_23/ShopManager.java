@@ -1,4 +1,4 @@
-package JavaProLectures.HomeWork._30_08_23;
+package HomeWork._30_08_23;
 
 import java.util.ArrayList;
 

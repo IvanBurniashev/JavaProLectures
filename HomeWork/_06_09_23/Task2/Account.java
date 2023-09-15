@@ -1,23 +1,23 @@
-package JavaProLectures.HomeWork._06_09_23.Task2;
+package HomeWork._06_09_23.Task2;
 
-public abstract class Account {
+abstract class Account {
     private String accountNumber;
     private double accountBalance;
 
-    public Account(String accountNumber, double accountBalance) {
+    Account(String accountNumber, double accountBalance) {
         this.accountNumber = accountNumber;
         this.accountBalance = accountBalance;
     }
 
-    protected void setAccountBalance(double accountBalance) {
+    void setAccountBalance(double accountBalance) {
         this.accountBalance = accountBalance;
     }
 
-    protected double getAccountBalance() {
+    double getAccountBalance() {
         return accountBalance;
     }
 
-    protected String getAccountNumber() {
+    String getAccountNumber() {
         return accountNumber;
     }
 

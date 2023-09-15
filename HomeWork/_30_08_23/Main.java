@@ -1,9 +1,9 @@
-package JavaProLectures.HomeWork._30_08_23;
+package HomeWork._30_08_23;
 
-import static JavaProLectures.HomeWork._30_08_23.Currency.*;
-import static JavaProLectures.HomeWork._30_08_23.ProductCategory.CLOTHING;
-import static JavaProLectures.HomeWork._30_08_23.ProductCategory.ELECTRONICS;
-import static JavaProLectures.HomeWork._30_08_23.Size.*;
+import static HomeWork._30_08_23.Currency.*;
+import static HomeWork._30_08_23.ProductCategory.CLOTHING;
+import static HomeWork._30_08_23.ProductCategory.ELECTRONICS;
+import static HomeWork._30_08_23.Size.*;
 
 
 public class Main {

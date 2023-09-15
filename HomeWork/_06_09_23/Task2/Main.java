@@ -1,4 +1,4 @@
-package JavaProLectures.HomeWork._06_09_23.Task2;
+package HomeWork._06_09_23.Task2;
 
 public class Main {
     public static void main(String[] args) {
@@ -32,7 +32,7 @@ public class Main {
         FixedBalanceAccount fixedAccount = new FixedBalanceAccount("123456", 1000);
         CreditAccount creditAccount = new CreditAccount("789012", -500, 1000);
 
-        fixedAccount.transfer(creditAccount, 1100);
+        fixedAccount.transfer(creditAccount, 300);
         System.out.println("Fixed account #" + fixedAccount.getAccountNumber() + " balance: " + fixedAccount.getAccountBalance());
         System.out.println("Credit account #" + creditAccount.getAccountNumber() + " balance: " + creditAccount.getAccountBalance());
         System.out.println("=====================================================");

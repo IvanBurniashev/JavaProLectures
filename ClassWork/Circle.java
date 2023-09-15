@@ -1,4 +1,4 @@
-package JavaProLectures.ClassWork;
+package ClassWork;
 
 public class Circle extends Shape implements Resizable{
     public Circle(double radius) {
