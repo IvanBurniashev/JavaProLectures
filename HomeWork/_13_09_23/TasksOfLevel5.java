@@ -17,22 +17,22 @@ public class TasksOfLevel5 {
     }
 
     //    Найти среднее значение элементов LinkedList<Integer>.
-    double getAvg(ArrayList<Integer> arrayList) {
+    double getAvg(LinkedList<Integer> linkList) {
         int sum = 0;
-        for (Integer integer : arrayList) {
+        for (Integer integer : linkList) {
             sum += integer;
         }
-        return sum / arrayList.size();
+        return (double) sum / linkList.size();
     }
 
     //    Перебрать ArrayList<String> и вывести все элементы на экран.
-    void getElements(ArrayList<Integer> arrayList) {
-        for (Integer integer : arrayList) {
-            System.out.println(integer);
+    void getElements(ArrayList<String> arrayList) {
+        for (String string : arrayList) {
+            System.out.println(string);
         }
     }
 
-    //    Перебрать LinkedList<String> и найти самую длинную строку.
+/*    //    Перебрать LinkedList<String> и найти самую длинную строку.
     String getМaximumLength(List<String> str) {
         String maxLength = str.get(0);
         for (String string : str) {
@@ -43,6 +43,6 @@ public class TasksOfLevel5 {
         return maxLength;
     }
 
-//    Создать ArrayList с объектами вашего собственного класса и вывести их на экран.
+//    Создать ArrayList с объектами вашего собственного класса и вывести их на экран.*/
 
 }

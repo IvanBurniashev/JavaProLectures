@@ -63,7 +63,13 @@ public class Main {
         arrayOfNumbers.add(44);
         arrayOfNumbers.add(12);
 
-        LinkedList<String> arrayOfStrings = new LinkedList<>();
+        LinkedList<Integer> linkedOfNumbers = new LinkedList<>();
+        linkedOfNumbers.add(10);
+        linkedOfNumbers.add(-25);
+        linkedOfNumbers.add(60);
+        linkedOfNumbers.add(78);
+
+        ArrayList<String> arrayOfStrings = new ArrayList<>();
         arrayOfStrings.add("a");
         arrayOfStrings.add("abc");
         arrayOfStrings.add("ab");
@@ -76,7 +82,9 @@ public class Main {
         System.out.println(tasks5.getSum(arrayOfNumbers));
 
 //        Найти среднее значение элементов LinkedList<Integer>.
-        System.out.println(tasks5.getAvg(arrayOfNumbers));
+        System.out.println(tasks5.getAvg(linkedOfNumbers));
 
+//        Перебрать ArrayList<String> и вывести все элементы на экран.
+        tasks5.getElements(arrayOfStrings);
     }
 }
