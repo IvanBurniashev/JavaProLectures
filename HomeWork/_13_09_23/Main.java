@@ -64,7 +64,7 @@ public class Main {
         linkedOfNumbers.add(78);
 
         ArrayList<String> arrayOfStrings = new ArrayList<>();
-        arrayOfStrings.add("a");
+        arrayOfStrings.add("aaaaaaa");
         arrayOfStrings.add("abc");
         arrayOfStrings.add("ab");
         arrayOfStrings.add("bcde");
@@ -95,73 +95,78 @@ public class Main {
         linkedOfPerson.add(new Person("Dasha", 12));
 
 //         Уровень сложности 5 из 10:
-        System.out.println("======================================================\n" +
-                "Найти сумму всех элементов ArrayList<Integer>.");
+        System.out.println("======================================================\n" + "Найти сумму всех элементов ArrayList<Integer>.");
         System.out.println(tasks.getSum(arrayOfNumbers));
 
-        System.out.println("======================================================\n" +
-                "Найти среднее значение элементов LinkedList<Integer>.");
+        System.out.println("======================================================\n" + "Найти среднее значение элементов LinkedList<Integer>.");
         System.out.println(tasks.getAvg(linkedOfNumbers));
 
-        System.out.println("======================================================\n" +
-                "Перебрать ArrayList<String> и вывести все элементы на экран.");
+        System.out.println("======================================================\n" + "Перебрать ArrayList<String> и вывести все элементы на экран.");
         tasks.getElements(arrayOfStrings);
 
-        System.out.println("======================================================\n" +
-                "Перебрать LinkedList<String> и найти самую длинную строку.");
+        System.out.println("======================================================\n" + "Перебрать LinkedList<String> и найти самую длинную строку.");
         System.out.println(tasks.getМaximumLength(linkedOfStrings));
 
-        System.out.println("======================================================\n" +
-                "Создать ArrayList с объектами вашего собственного класса и вывести их на экран.");
+        System.out.println("======================================================\n" + "Создать ArrayList с объектами вашего собственного класса и вывести их на экран.");
         tasks.printOutPerson(arrayPerson);
 
 //        Уровень сложности 6 из 10:
-        System.out.println("======================================================\n" +
-                "     * Перебрать ArrayList<Integer> и найти наименьший элемент.");
+        System.out.println("======================================================\n" + "     * Перебрать ArrayList<Integer> и найти наименьший элемент.");
         System.out.println(tasks.minElementArray(arrayOfNumbers));
 
-        System.out.println("======================================================\n" +
-                "     * Перебрать LinkedList<Integer> и найти наибольший элемент.");
+        System.out.println("======================================================\n" + "     * Перебрать LinkedList<Integer> и найти наибольший элемент.");
         System.out.println(tasks.maxElementLinked(linkedOfNumbers));
 
-        System.out.println("======================================================\n" +
-                "     * Перебрать ArrayList<String> и найти количество элементов, начинающихся с определенной буквы.");
+        System.out.println("======================================================\n" + "     * Перебрать ArrayList<String> и найти количество элементов, начинающихся с определенной буквы.");
         System.out.println(tasks.amountOfElements(arrayOfStrings, 'b'));
 
-        System.out.println("======================================================\n" +
-                "     * Перебрать LinkedList<String> и найти первое вхождение определенной строки.");
+        System.out.println("======================================================\n" + "     * Перебрать LinkedList<String> и найти первое вхождение определенной строки.");
         tasks.firstOccurrenceOfTheSubstring(linkedOfStrings, "bc");
 
-        System.out.println("======================================================\n" +
-                "     * Создать LinkedList с объектами вашего собственного класса и удалить все элементы,\n" +
-                " удовлетворяющие определенному условию.  Удаляем элементы у которых возраст меньше указанного.");
+        System.out.println("======================================================\n" + "     * Создать LinkedList с объектами вашего собственного класса и удалить все элементы,\n" + " удовлетворяющие определенному условию.  Удаляем элементы у которых возраст меньше указанного.");
         System.out.println("Result: " + tasks.deletingElementsToAge(linkedOfPerson, 18));
 
 //             * Уровень сложности 7 из 10:
-        System.out.println("======================================================\n" +
-                "     * Перебрать ArrayList<Integer> и удалить все четные числа.\n");
+        System.out.println("======================================================\n" + "     * Перебрать ArrayList<Integer> и удалить все четные числа.\n");
         System.out.println(arrayOfNumbers);
         System.out.println(tasks.removesEvenNumbers(arrayOfNumbers));
 
-        System.out.println("======================================================\n" +
-                "* Перебрать LinkedList<Integer> и заменить все элементы, кратные 3, на нули.\n");
+        System.out.println("======================================================\n" + "* Перебрать LinkedList<Integer> и заменить все элементы, кратные 3, на нули.\n");
         System.out.println(linkedOfNumbers);
         System.out.println(tasks.replaceElements(linkedOfNumbers));
 
-        System.out.println("======================================================\n" +
-                "* Перебрать ArrayList<String> и объединить все элементы в одну строку.\n");
+        System.out.println("======================================================\n" + "* Перебрать ArrayList<String> и объединить все элементы в одну строку.\n");
         System.out.println(arrayOfStrings);
         System.out.println(tasks.concatenateString(arrayOfStrings));
 
-        System.out.println("======================================================\n" +
-                "* Перебрать LinkedList<String> и удалить все элементы, содержащие определенную подстроку.\n\n\n");
+        System.out.println("======================================================\n" + "* Перебрать LinkedList<String> и удалить все элементы, содержащие определенную подстроку.\n\n\n");
         System.out.println(linkedOfStrings);
         System.out.println(tasks.removesElementsWithASubstring(linkedOfStrings, "cd"));
 
-        System.out.println("======================================================\n" +
-                "Создать ArrayList с объектами вашего собственного класса и вывести только те,\n" +
-                " которые удовлетворяют определенному условию. Выводим тех, возраст которых меньше 18 лет.");
+        System.out.println("======================================================\n" + "Создать ArrayList с объектами вашего собственного класса и вывести только те,\n" + " которые удовлетворяют определенному условию. Выводим тех, возраст которых меньше 18 лет.");
         System.out.println(linkedOfPerson);
         System.out.println("Result: " + tasks.outPrintElementsToAge(linkedOfPerson, 18));
+
+        //     * Уровень сложности 8 из 10:
+        System.out.println("======================================================\n" +
+                " * Перебрать ArrayList<Integer> и найти сумму квадратов всех элементов.");
+        System.out.println(tasks.getSumSquare(arrayOfNumbers));
+
+        System.out.println("======================================================\n" +
+                " * Перебрать LinkedList<Integer> и вычислить произведение всех элементов.");
+        System.out.println(linkedOfNumbers);
+        System.out.println(tasks.multiplicationOfElements(linkedOfNumbers));
+
+        System.out.println("======================================================\n" +
+                " * Перебрать ArrayList<String> и найти самую короткую строку.");
+        System.out.println(arrayOfStrings);
+        System.out.println(tasks.minStringLength(arrayOfStrings));
+
+        System.out.println("======================================================\n" +
+                "* Перебрать LinkedList<String> и заменить все гласные буквы в каждой строке на символ '*'.");
+        System.out.println(linkedOfStrings);
+        System.out.println(tasks.replacingVowels(linkedOfStrings));
+
     }
+
 }

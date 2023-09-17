@@ -183,5 +183,58 @@ public class Tasks {
         return newLinkedList;
     }
 
+    /**
+     * Уровень сложности 8 из 10:
+     * Перебрать ArrayList<Integer> и найти сумму квадратов всех элементов.
+     * Перебрать LinkedList<Integer> и вычислить произведение всех элементов.
+     * Перебрать ArrayList<String> и найти самую короткую строку.
+     * Перебрать LinkedList<String> и заменить все гласные буквы в каждой строке на символ '*'.
+     * Создать LinkedList с объектами вашего собственного класса и отсортировать их в порядке убывания.
+     */
+    // TODO: 17.09.2023  * Перебрать ArrayList<Integer> и найти сумму квадратов всех элементов.
+    int getSumSquare(ArrayList<Integer> arrayList) {
+        int sum = 0;
+        for (Integer integer : arrayList) {
+            sum += Math.pow(integer, 2);
+        }
+        return sum;
+    }
+
+    // TODO: 17.09.2023  * Перебрать LinkedList<Integer> и вычислить произведение всех элементов.
+    int multiplicationOfElements(LinkedList<Integer> linkedList) {
+        int multiplication = 1;
+        for (Integer integer : linkedList) {
+            multiplication *= integer;
+        }
+        return multiplication;
+    }
+
+    // TODO: 17.09.2023  * Перебрать ArrayList<String> и найти самую короткую строку.
+    String minStringLength(ArrayList<String> arrayList) {
+        String minString = arrayList.get(0);
+        for (String str :
+                arrayList) {
+            if (str.length() < minString.length()) {
+                minString = str;
+            }
+        }
+        return minString;
+    }
+
+    // TODO: 17.09.2023  * Перебрать LinkedList<String> и заменить все гласные буквы в каждой строке на символ '*'.
+    LinkedList<String> replacingVowels(LinkedList<String> linkedList) {
+        char[] charVowels = {'a', 'e', 'i', 'o', 'u'};
+        LinkedList<String> newLinkedList = new LinkedList<>();
+        for (String str :
+                linkedList) {
+            for (Character chr :
+                    charVowels) {
+                str = str.replace(chr, '*');
+            }
+            newLinkedList.add(str);
+        }
+        return newLinkedList;
+    }
+    // TODO: 17.09.2023  * Создать LinkedList с объектами вашего собственного класса и отсортировать их в порядке убывания.
 
 }
