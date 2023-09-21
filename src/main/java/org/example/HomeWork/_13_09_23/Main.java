@@ -1,6 +1,7 @@
 package org.example.HomeWork._13_09_23;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedList;
 
 public class Main {
@@ -37,7 +38,7 @@ public class Main {
      * Уровень сложности 9 из 10:
      * Перебрать ArrayList<Integer> и найти второй по величине элемент.
      * Перебрать LinkedList<Integer> и вывести все элементы в обратном порядке.
-     * Перебрать ArrayList<String> и вывести все строки, содержащие только буквы.
+     * Перебрать ArrayList<String> и вывести все строки, содержащие только буквы, только один символ
      * Перебрать LinkedList<String> и найти самую длинную строку, не содержащую пробелов.
      * Создать ArrayList с объектами вашего собственного класса и отфильтровать только уникальные элементы.
      * <p>
@@ -52,9 +53,11 @@ public class Main {
 
     public static void main(String[] args) {
         ArrayList<Integer> arrayOfNumbers = new ArrayList<>();
-        arrayOfNumbers.add(5);
+        arrayOfNumbers.add(90);
         arrayOfNumbers.add(-6);
-        arrayOfNumbers.add(44);
+        arrayOfNumbers.add(96);
+        arrayOfNumbers.add(95);
+        arrayOfNumbers.add(89);
         arrayOfNumbers.add(12);
 
         LinkedList<Integer> linkedOfNumbers = new LinkedList<>();
@@ -79,14 +82,14 @@ public class Main {
 
         Tasks tasks = new Tasks();
 
-        ArrayList<Person> arrayPerson = new ArrayList<Person>();
+        ArrayList<Person> arrayPerson = new ArrayList<>();
         arrayPerson.add(new Person("Anna", 25));
         arrayPerson.add(new Person("Maximilian", 40));
         arrayPerson.add(new Person("Veronika", 18));
         arrayPerson.add(new Person("Anton", 35));
         arrayPerson.add(new Person("Dasha", 12));
 
-        LinkedList<Person> linkedOfPerson = new LinkedList<Person>();
+        LinkedList<Person> linkedOfPerson = new LinkedList<>();
         linkedOfPerson.add(new Person("Anna", 25));
         linkedOfPerson.add(new Person("Maximilian", 40));
         linkedOfPerson.add(new Person("Veronika", 18));
@@ -167,6 +170,18 @@ public class Main {
         System.out.println(linkedOfStrings);
         System.out.println(tasks.replacingVowels(linkedOfStrings));
 
-    }
+        System.out.println("======================================================\n" +
+                "* Создать LinkedList с объектами вашего собственного класса и отсортировать их в порядке убывания.");
+        tasks.sortPerson(linkedOfPerson);
+        System.out.println(linkedOfPerson);
 
+//     * Уровень сложности 9 из 10:
+        System.out.println("======================================================\n" +
+                " * Перебрать ArrayList<Integer> и найти второй по величине элемент.");
+        System.out.println(arrayOfNumbers);
+        System.out.println(tasks.secondMaximum(arrayOfNumbers));
+
+    }
 }
+
+

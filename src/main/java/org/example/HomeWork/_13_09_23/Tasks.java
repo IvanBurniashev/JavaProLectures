@@ -2,6 +2,7 @@ package org.example.HomeWork._13_09_23;
 
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.LinkedList;
 
 
@@ -164,8 +165,7 @@ public class Tasks {
     // TODO: 17.09.2023  * Перебрать LinkedList<String> и удалить все элементы, содержащие определенную подстроку.
     LinkedList<String> removesElementsWithASubstring(LinkedList<String> linkedString, String substring) {
         LinkedList<String> newLinkedString = new LinkedList<>();
-        for (String str :
-                linkedString) {
+        for (String str : linkedString) {
             if (str.indexOf(substring) == -1) {
                 newLinkedString.add(str);
             }
@@ -214,8 +214,7 @@ public class Tasks {
     // TODO: 17.09.2023  * Перебрать ArrayList<String> и найти самую короткую строку.
     String minStringLength(ArrayList<String> arrayList) {
         String minString = arrayList.get(0);
-        for (String str :
-                arrayList) {
+        for (String str : arrayList) {
             if (str.length() < minString.length()) {
                 minString = str;
             }
@@ -227,16 +226,40 @@ public class Tasks {
     LinkedList<String> replacingVowels(LinkedList<String> linkedList) {
         char[] charVowels = {'a', 'e', 'i', 'o', 'u'};
         LinkedList<String> newLinkedList = new LinkedList<>();
-        for (String str :
-                linkedList) {
-            for (Character chr :
-                    charVowels) {
+        for (String str : linkedList) {
+            for (Character chr : charVowels) {
                 str = str.replace(chr, '*');
             }
             newLinkedList.add(str);
         }
         return newLinkedList;
     }
-    // TODO: 17.09.2023  * Создать LinkedList с объектами вашего собственного класса и отсортировать их в порядке убывания.
 
+    // TODO: 17.09.2023  * Создать LinkedList с объектами вашего собственного класса и отсортировать их в порядке убывания.
+    void sortPerson(LinkedList<Person> linkedList) {
+        Collections.sort(linkedList);
+    }
+
+    /**
+     * Уровень сложности 9 из 10:
+     * Перебрать ArrayList<Integer> и найти второй по величине элемент.
+     * Перебрать LinkedList<Integer> и вывести все элементы в обратном порядке.
+     * Перебрать ArrayList<String> и вывести все строки, содержащие только буквы.
+     * Перебрать LinkedList<String> и найти самую длинную строку, не содержащую пробелов.
+     * Создать ArrayList с объектами вашего собственного класса и отфильтровать только уникальные элементы.
+     */
+    // TODO: 20.09.2023  * Перебрать ArrayList<Integer> и найти второй по величине элемент.
+    Integer secondMaximum(ArrayList<Integer> arrayList) {
+        Integer maxInteger = Integer.MIN_VALUE;
+        Integer secondMaxInteger = Integer.MIN_VALUE;
+        for (Integer index : arrayList) {
+            if (index > maxInteger) {
+                secondMaxInteger = maxInteger;
+                maxInteger = index;
+            } else if (index > secondMaxInteger && index != maxInteger) {
+                secondMaxInteger = index;
+            }
+        }
+        return secondMaxInteger;
+    }
 }
