@@ -262,4 +262,27 @@ public class Tasks {
         }
         return secondMaxInteger;
     }
+
+    // TODO: 22.09.2023  * Перебрать LinkedList<Integer> и вывести все элементы в обратном порядке.
+    void iteratesInReverseOrder(LinkedList<Integer> linkedList) {
+        for (int i = linkedList.size() - 1; i >= 0; i--) {
+            System.out.println(linkedList.get(i));
+        }
+    }
+
+    // TODO: 22.09.2023  * Перебрать ArrayList<String> и вывести все строки, содержащие только буквы.
+    void outOnlyLetters(ArrayList<String> arrayList) {
+        for (String str : arrayList) {
+            boolean flag = true;
+            for (int i = 0; i <= 9; i++) {
+                if (str.indexOf('0' + i) > -1) {
+                    flag = false;
+                }
+            }
+            if (flag) {
+                System.out.println(str);
+            }
+        }
+    }
+
 }

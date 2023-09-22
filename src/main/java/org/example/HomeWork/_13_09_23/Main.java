@@ -1,10 +1,17 @@
 package org.example.HomeWork._13_09_23;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.LinkedList;
 
 public class Main {
+    public static void main2(String[] args) {
+        for (int i = 0; i <= 9; i++) {
+            char charDigit = (char) ('0' + i);
+            System.out.println("Цифра: " + i + ", Символ: " + charDigit);
+        }
+
+    }
+
     /**
      * Список задач
      * Уровень сложности 5 из 10:
@@ -38,7 +45,7 @@ public class Main {
      * Уровень сложности 9 из 10:
      * Перебрать ArrayList<Integer> и найти второй по величине элемент.
      * Перебрать LinkedList<Integer> и вывести все элементы в обратном порядке.
-     * Перебрать ArrayList<String> и вывести все строки, содержащие только буквы, только один символ
+     * Перебрать ArrayList<String> и вывести все строки, содержащие только буквы,без цифр
      * Перебрать LinkedList<String> и найти самую длинную строку, не содержащую пробелов.
      * Создать ArrayList с объектами вашего собственного класса и отфильтровать только уникальные элементы.
      * <p>
@@ -67,10 +74,10 @@ public class Main {
         linkedOfNumbers.add(78);
 
         ArrayList<String> arrayOfStrings = new ArrayList<>();
-        arrayOfStrings.add("aaaaaaa");
-        arrayOfStrings.add("abc");
+        arrayOfStrings.add("aaaa1aaa");
+        arrayOfStrings.add("ab0c");
         arrayOfStrings.add("ab");
-        arrayOfStrings.add("bcde");
+        arrayOfStrings.add("bcd9e");
         arrayOfStrings.add("bc");
 
         LinkedList<String> linkedOfStrings = new LinkedList<>();
@@ -180,6 +187,18 @@ public class Main {
                 " * Перебрать ArrayList<Integer> и найти второй по величине элемент.");
         System.out.println(arrayOfNumbers);
         System.out.println(tasks.secondMaximum(arrayOfNumbers));
+
+
+        System.out.println("======================================================\n" +
+                "* Перебрать LinkedList<Integer> и вывести все элементы в обратном порядке.");
+        System.out.println(linkedOfNumbers);
+        tasks.iteratesInReverseOrder(linkedOfNumbers);
+
+        // TODO: 22.09.2023  * Перебрать ArrayList<String> и вывести все строки, содержащие только буквы.
+        System.out.println("======================================================\n" +
+                " * Перебрать ArrayList<String> и вывести все строки, содержащие только буквы.");
+        System.out.println(arrayOfStrings);
+        tasks.outOnlyLetters(arrayOfStrings);
 
     }
 }
