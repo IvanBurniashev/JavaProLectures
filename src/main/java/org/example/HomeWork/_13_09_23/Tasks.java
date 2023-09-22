@@ -285,4 +285,36 @@ public class Tasks {
         }
     }
 
+    // TODO: 22.09.2023  * Перебрать LinkedList<String> и найти самую длинную строку, не содержащую пробелов.
+    String longestString(LinkedList<String> linkedList) {
+        String maxString = "";
+        for (String str : linkedList) {
+            if (!str.contains(" ") && str.length() > maxString.length()) {
+                maxString = str;
+            }
+        }
+        return maxString;
+    }
+
+    // TODO: 22.09.2023  * Создать ArrayList с объектами вашего собственного класса и отфильтровать только уникальные элементы.
+    ArrayList<Person> returnsUniqueElements(ArrayList<Person> personArrayList) {
+        for (int i = 0; i < personArrayList.size(); i++) {
+
+        }
+        return null;
+    }
+
+    /**  * Уровень сложности 10 из 10:
+     * Перебрать ArrayList<Integer> и найти наибольшую возрастающую последовательность элементов.
+     * Перебрать LinkedList<Integer> и удалить все дубликаты элементов.
+     * Перебрать ArrayList<String> и создать новый список, содержащий только уникальные строки.
+     * <p>
+     * Перебрать LinkedList<String> и объединить все строки в одну с использованием разделителя (пробела).
+     * Создать LinkedList с объектами вашего собственного класса и отсортировать их по нескольким критериям.
+     */
+    ArrayList<Integer> maximumIncreasingSequence(ArrayList<Integer> integerArrayList){
+
+        return null;
+    }
+
 }

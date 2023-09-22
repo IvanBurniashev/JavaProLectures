@@ -4,13 +4,6 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class Main {
-    public static void main2(String[] args) {
-        for (int i = 0; i <= 9; i++) {
-            char charDigit = (char) ('0' + i);
-            System.out.println("Цифра: " + i + ", Символ: " + charDigit);
-        }
-
-    }
 
     /**
      * Список задач
@@ -83,16 +76,19 @@ public class Main {
         LinkedList<String> linkedOfStrings = new LinkedList<>();
         linkedOfStrings.add("fjklmn");
         linkedOfStrings.add("abc");
-        linkedOfStrings.add("xyzd");
-        linkedOfStrings.add("bcde");
-        linkedOfStrings.add("byungnlrebc");
+        linkedOfStrings.add("xyzdw");
+        linkedOfStrings.add("bc delldk");
+        linkedOfStrings.add("byungnl rebc");
 
         Tasks tasks = new Tasks();
 
         ArrayList<Person> arrayPerson = new ArrayList<>();
         arrayPerson.add(new Person("Anna", 25));
+        arrayPerson.add(new Person("Anton", 35));
+        arrayPerson.add(new Person("Maximilian", 40));
         arrayPerson.add(new Person("Maximilian", 40));
         arrayPerson.add(new Person("Veronika", 18));
+        arrayPerson.add(new Person("Anton", 35));
         arrayPerson.add(new Person("Anton", 35));
         arrayPerson.add(new Person("Dasha", 12));
 
@@ -158,49 +154,47 @@ public class Main {
         System.out.println("Result: " + tasks.outPrintElementsToAge(linkedOfPerson, 18));
 
         //     * Уровень сложности 8 из 10:
-        System.out.println("======================================================\n" +
-                " * Перебрать ArrayList<Integer> и найти сумму квадратов всех элементов.");
+        System.out.println("======================================================\n" + " * Перебрать ArrayList<Integer> и найти сумму квадратов всех элементов.");
         System.out.println(tasks.getSumSquare(arrayOfNumbers));
 
-        System.out.println("======================================================\n" +
-                " * Перебрать LinkedList<Integer> и вычислить произведение всех элементов.");
+        System.out.println("======================================================\n" + " * Перебрать LinkedList<Integer> и вычислить произведение всех элементов.");
         System.out.println(linkedOfNumbers);
         System.out.println(tasks.multiplicationOfElements(linkedOfNumbers));
 
-        System.out.println("======================================================\n" +
-                " * Перебрать ArrayList<String> и найти самую короткую строку.");
+        System.out.println("======================================================\n" + " * Перебрать ArrayList<String> и найти самую короткую строку.");
         System.out.println(arrayOfStrings);
         System.out.println(tasks.minStringLength(arrayOfStrings));
 
-        System.out.println("======================================================\n" +
-                "* Перебрать LinkedList<String> и заменить все гласные буквы в каждой строке на символ '*'.");
+        System.out.println("======================================================\n" + "* Перебрать LinkedList<String> и заменить все гласные буквы в каждой строке на символ '*'.");
         System.out.println(linkedOfStrings);
         System.out.println(tasks.replacingVowels(linkedOfStrings));
 
-        System.out.println("======================================================\n" +
-                "* Создать LinkedList с объектами вашего собственного класса и отсортировать их в порядке убывания.");
+        System.out.println("======================================================\n" + "* Создать LinkedList с объектами вашего собственного класса и отсортировать их в порядке убывания.");
         tasks.sortPerson(linkedOfPerson);
         System.out.println(linkedOfPerson);
 
 //     * Уровень сложности 9 из 10:
-        System.out.println("======================================================\n" +
-                " * Перебрать ArrayList<Integer> и найти второй по величине элемент.");
+        System.out.println("======================================================\n" + " * Перебрать ArrayList<Integer> и найти второй по величине элемент.");
         System.out.println(arrayOfNumbers);
         System.out.println(tasks.secondMaximum(arrayOfNumbers));
 
 
-        System.out.println("======================================================\n" +
-                "* Перебрать LinkedList<Integer> и вывести все элементы в обратном порядке.");
+        System.out.println("======================================================\n" + "* Перебрать LinkedList<Integer> и вывести все элементы в обратном порядке.");
         System.out.println(linkedOfNumbers);
         tasks.iteratesInReverseOrder(linkedOfNumbers);
 
         // TODO: 22.09.2023  * Перебрать ArrayList<String> и вывести все строки, содержащие только буквы.
-        System.out.println("======================================================\n" +
-                " * Перебрать ArrayList<String> и вывести все строки, содержащие только буквы.");
+        System.out.println("======================================================\n" + " * Перебрать ArrayList<String> и вывести все строки, содержащие только буквы.");
         System.out.println(arrayOfStrings);
         tasks.outOnlyLetters(arrayOfStrings);
 
+        // TODO: 22.09.2023  * Перебрать LinkedList<String> и найти самую длинную строку, не содержащую пробелов.
+        System.out.println("======================================================\n" + "* Перебрать LinkedList<String> и найти самую длинную строку, не содержащую пробелов.");
+        System.out.println(linkedOfStrings);
+        System.out.println(tasks.longestString(linkedOfStrings));
+
     }
+//
 }
 
 
