@@ -53,18 +53,29 @@ public class Main {
 
     public static void main(String[] args) {
         ArrayList<Integer> arrayOfNumbers = new ArrayList<>();
-        arrayOfNumbers.add(90);
-        arrayOfNumbers.add(-6);
-        arrayOfNumbers.add(96);
-        arrayOfNumbers.add(95);
-        arrayOfNumbers.add(89);
+        arrayOfNumbers.add(20);
+        arrayOfNumbers.add(21);
+        arrayOfNumbers.add(22);
+        arrayOfNumbers.add(23);
+        arrayOfNumbers.add(17);
+        arrayOfNumbers.add(10);
+        arrayOfNumbers.add(11);
         arrayOfNumbers.add(12);
+        arrayOfNumbers.add(7);
+        arrayOfNumbers.add(14);
+        arrayOfNumbers.add(15);
 
         LinkedList<Integer> linkedOfNumbers = new LinkedList<>();
-        linkedOfNumbers.add(10);
-        linkedOfNumbers.add(-25);
+        linkedOfNumbers.add(11);
+        linkedOfNumbers.add(25);
         linkedOfNumbers.add(60);
-        linkedOfNumbers.add(78);
+        linkedOfNumbers.add(38);
+        linkedOfNumbers.add(60);
+        linkedOfNumbers.add(25);
+        linkedOfNumbers.add(10);
+        linkedOfNumbers.add(10);
+        linkedOfNumbers.add(10);
+        linkedOfNumbers.add(60);
 
         ArrayList<String> arrayOfStrings = new ArrayList<>();
         arrayOfStrings.add("aaaa1aaa");
@@ -72,13 +83,28 @@ public class Main {
         arrayOfStrings.add("ab");
         arrayOfStrings.add("bcd9e");
         arrayOfStrings.add("bc");
+        arrayOfStrings.add("abc");
+        arrayOfStrings.add("fjklmn");
+        arrayOfStrings.add("xyzdw");
+        arrayOfStrings.add("abc");
+        arrayOfStrings.add("bc delldk");
+        arrayOfStrings.add("xyzdw");
+        arrayOfStrings.add("xyzdw");
+        arrayOfStrings.add("byungnl rebc");
+        arrayOfStrings.add("xyzdw");
+
 
         LinkedList<String> linkedOfStrings = new LinkedList<>();
         linkedOfStrings.add("fjklmn");
         linkedOfStrings.add("abc");
         linkedOfStrings.add("xyzdw");
+        linkedOfStrings.add("abc");
         linkedOfStrings.add("bc delldk");
+        linkedOfStrings.add("xyzdw");
+        linkedOfStrings.add("xyzdw");
         linkedOfStrings.add("byungnl rebc");
+        linkedOfStrings.add("xyzdw");
+
 
         Tasks tasks = new Tasks();
 
@@ -86,7 +112,16 @@ public class Main {
         arrayPerson.add(new Person("Anna", 25));
         arrayPerson.add(new Person("Anton", 35));
         arrayPerson.add(new Person("Maximilian", 40));
-        arrayPerson.add(new Person("Maximilian", 40));
+        arrayPerson.add(new Person("Anton", 35));
+        arrayPerson.add(new Person("Anton", 35));
+        arrayPerson.add(new Person("Anton", 35));
+        arrayPerson.add(new Person("Anton", 35));
+        arrayPerson.add(new Person("Maximilian", 41));
+        arrayPerson.add(new Person("Veronika", 18));
+        arrayPerson.add(new Person("Veronika", 18));
+        arrayPerson.add(new Person("Veronika", 18));
+        arrayPerson.add(new Person("Anton", 36));
+        arrayPerson.add(new Person("Anton", 35));
         arrayPerson.add(new Person("Veronika", 18));
         arrayPerson.add(new Person("Anton", 35));
         arrayPerson.add(new Person("Anton", 35));
@@ -192,6 +227,37 @@ public class Main {
         System.out.println("======================================================\n" + "* Перебрать LinkedList<String> и найти самую длинную строку, не содержащую пробелов.");
         System.out.println(linkedOfStrings);
         System.out.println(tasks.longestString(linkedOfStrings));
+
+        // TODO: 22.09.2023  * Создать ArrayList с объектами вашего собственного класса и отфильтровать только уникальные элементы.
+        System.out.println("======================================================\n" +
+                "* Создать ArrayList с объектами вашего собственного класса и отфильтровать только уникальные элементы.");
+        System.out.println(arrayPerson);
+        System.out.println(tasks.returnsUniqueElements(arrayPerson));
+
+//     * Уровень сложности 10 из 10:
+        // TODO: 22.09.2023  * Перебрать ArrayList<Integer> и найти наибольшую возрастающую последовательность элементов.
+        System.out.println("======================================================\n" + "* Перебрать ArrayList<Integer> и найти наибольшую возрастающую последовательность элементов.");
+        System.out.println(arrayOfNumbers);
+        System.out.println(tasks.maximumIncreasingSequence(arrayOfNumbers));
+
+        // TODO: 23.09.2023  * Перебрать LinkedList<Integer> и удалить все дубликаты элементов.
+        System.out.println("======================================================\n" +
+                "* Перебрать LinkedList<Integer> и удалить все дубликаты элементов.");
+        System.out.println(linkedOfNumbers);
+        System.out.println(tasks.removesDuplicates(linkedOfNumbers));
+
+        // TODO: 23.09.2023  * Перебрать ArrayList<String> и создать новый список, содержащий только уникальные строки
+        System.out.println("======================================================\n" +
+                "* Перебрать ArrayList<String> и создать новый список, содержащий только уникальные строки");
+        System.out.println(arrayOfStrings);
+        System.out.println(tasks.uniqueNewList(arrayOfStrings));
+
+        // TODO: 23.09.2023  * Перебрать LinkedList<String> и объединить все строки в одну с использованием разделителя (пробела).
+        System.out.println("======================================================\n" +
+                "* Перебрать LinkedList<String> и объединить все строки в одну с использованием разделителя (пробела)");
+        System.out.println(linkedOfStrings);
+        System.out.println(tasks.glueElements(linkedOfStrings));
+
 
     }
 //

@@ -299,12 +299,18 @@ public class Tasks {
     // TODO: 22.09.2023  * Создать ArrayList с объектами вашего собственного класса и отфильтровать только уникальные элементы.
     ArrayList<Person> returnsUniqueElements(ArrayList<Person> personArrayList) {
         for (int i = 0; i < personArrayList.size(); i++) {
-
+            for (int j = i + 1; j < personArrayList.size(); j++) {
+                if (personArrayList.get(j).equals(personArrayList.get(i))) {
+                    personArrayList.remove(j);
+                    j--;
+                }
+            }
         }
-        return null;
+        return personArrayList;
     }
 
-    /**  * Уровень сложности 10 из 10:
+    /**
+     * Уровень сложности 10 из 10:
      * Перебрать ArrayList<Integer> и найти наибольшую возрастающую последовательность элементов.
      * Перебрать LinkedList<Integer> и удалить все дубликаты элементов.
      * Перебрать ArrayList<String> и создать новый список, содержащий только уникальные строки.
@@ -312,7 +318,58 @@ public class Tasks {
      * Перебрать LinkedList<String> и объединить все строки в одну с использованием разделителя (пробела).
      * Создать LinkedList с объектами вашего собственного класса и отсортировать их по нескольким критериям.
      */
-    ArrayList<Integer> maximumIncreasingSequence(ArrayList<Integer> integerArrayList){
+    // TODO: 22.09.2023  * Перебрать ArrayList<Integer> и найти наибольшую возрастающую последовательность элементов.
+    ArrayList<Integer> maximumIncreasingSequence(ArrayList<Integer> integerArrayList) {
+        ArrayList<Integer> maxIncreas = new ArrayList<>();
+        ArrayList<Integer> tempMaxIncreas = new ArrayList<>();
+        for (int i = 0; i < integerArrayList.size(); i++) {
+            if (i == 0 || integerArrayList.get(i) <= integerArrayList.get(i - 1)) {
+                tempMaxIncreas.clear();
+            }
+            tempMaxIncreas.add(integerArrayList.get(i));
+            if (tempMaxIncreas.size() > maxIncreas.size()) {
+                maxIncreas.clear();
+                maxIncreas.addAll(tempMaxIncreas);
+            }
+        }
+        return maxIncreas;
+    }
+
+    // TODO: 23.09.2023  * Перебрать LinkedList<Integer> и удалить все дубликаты элементов.
+    LinkedList<Integer> removesDuplicates(LinkedList<Integer> linkedList) {
+        for (int i = 0; i < linkedList.size(); i++) {
+            for (int j = i + 1; j < linkedList.size(); j++) {
+                if (linkedList.get(i) == linkedList.get(j)) {
+                    linkedList.remove(j);
+                    j--;
+                }
+            }
+        }
+        return linkedList;
+    }
+
+    // TODO: 23.09.2023  * Перебрать ArrayList<String> и создать новый список, содержащий только уникальные строки
+    ArrayList<String> uniqueNewList(ArrayList<String> arrayList) {
+        ArrayList<String> uniqueNewList = new ArrayList<>();
+        for (String str : arrayList) {
+            if (!uniqueNewList.contains(str)) {
+                uniqueNewList.add(str);
+            }
+        }
+        return uniqueNewList;
+    }
+
+    // TODO: 23.09.2023  * Перебрать LinkedList<String> и объединить все строки в одну с использованием разделителя (пробела).
+    String glueElements(LinkedList<String> linkedList) {
+        StringBuilder result = new StringBuilder();
+        for (String str : linkedList) {
+            result.append(" ").append(str);
+        }
+        return result.toString();
+    }
+
+    // TODO: 23.09.2023  * Создать LinkedList с объектами вашего собственного класса и отсортировать их по нескольким критериям.
+    LinkedList<Person> sortingByMultipleCriteria(LinkedList<Person> linkedList){
 
         return null;
     }
