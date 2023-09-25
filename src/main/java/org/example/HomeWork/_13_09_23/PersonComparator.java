@@ -10,7 +10,7 @@ public class PersonComparator implements Comparator<Person> {
     public int compare(Person o1, Person o2) {
         return Integer.compare(o1.getAge(), o2.getAge());
     }
-//// Вариант последовательного сравнения сначала по имени, а потом по возрасту
+//// Вариант последовательного сравнения сначала по имени, а потом по возрасту без применения встроенного метода .thenComparing()
 //    @Override
 //    public int compare(Person o1, Person o2) {
 //        if (o1.getName().compareTo(o2.getName()) != 0) {
@@ -19,6 +19,7 @@ public class PersonComparator implements Comparator<Person> {
 //        return Integer.compare(o1.getAge(), o2.getAge());
 //    }
 
+    //Использование встроенного метода thenComparing()
     public PersonComparator thenComparingName() {
         // Добавляем сравнение по имени
         return (PersonComparator) thenComparing(new Comparator<Person>() {
