@@ -1,6 +1,9 @@
 package org.example.HomeWork._13_09_23;
 
+import org.example.IndependWork.Test.Person1;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.LinkedList;
 
 public class Main {
@@ -52,6 +55,7 @@ public class Main {
      */
 
     public static void main(String[] args) {
+
         ArrayList<Integer> arrayOfNumbers = new ArrayList<>();
         arrayOfNumbers.add(20);
         arrayOfNumbers.add(21);
@@ -128,11 +132,23 @@ public class Main {
         arrayPerson.add(new Person("Dasha", 12));
 
         LinkedList<Person> linkedOfPerson = new LinkedList<>();
-        linkedOfPerson.add(new Person("Anna", 25));
+        linkedOfPerson.add(new Person("Anna", 40));
         linkedOfPerson.add(new Person("Maximilian", 40));
+        linkedOfPerson.add(new Person("Maximilian", 40));
+        linkedOfPerson.add(new Person("Maximilian", 40));
+        linkedOfPerson.add(new Person("Anna", 21));
+        linkedOfPerson.add(new Person("Veronika", 40));
+        linkedOfPerson.add(new Person("Anna", 25));
         linkedOfPerson.add(new Person("Veronika", 18));
+        linkedOfPerson.add(new Person("Veronika", 13));
+        linkedOfPerson.add(new Person("Anna", 17));
+        linkedOfPerson.add(new Person("Veronika", 18));
+        linkedOfPerson.add(new Person("Veronika", 45));
         linkedOfPerson.add(new Person("Natalia", 17));
-        linkedOfPerson.add(new Person("Anton", 35));
+        linkedOfPerson.add(new Person("Natalia", 40));
+        linkedOfPerson.add(new Person("Natalia", 15));
+        linkedOfPerson.add(new Person("Anton", 40));
+        linkedOfPerson.add(new Person("Boris", 40));
         linkedOfPerson.add(new Person("Dasha", 12));
 
 //         Уровень сложности 5 из 10:
@@ -205,6 +221,7 @@ public class Main {
         System.out.println(tasks.replacingVowels(linkedOfStrings));
 
         System.out.println("======================================================\n" + "* Создать LinkedList с объектами вашего собственного класса и отсортировать их в порядке убывания.");
+        System.out.println(linkedOfPerson);
         tasks.sortPerson(linkedOfPerson);
         System.out.println(linkedOfPerson);
 
@@ -257,6 +274,14 @@ public class Main {
                 "* Перебрать LinkedList<String> и объединить все строки в одну с использованием разделителя (пробела)");
         System.out.println(linkedOfStrings);
         System.out.println(tasks.glueElements(linkedOfStrings));
+
+        // TODO: 23.09.2023  * Создать LinkedList с объектами вашего собственного класса и отсортировать их по нескольким критериям.
+        System.out.println("======================================================\n" +
+                "* Создать LinkedList с объектами вашего собственного класса и отсортировать их по нескольким критериям.");
+        System.out.println(linkedOfPerson);
+//        System.out.println(tasks.sortingByMultipleCriteria(linkedOfPerson));
+        Collections.sort(linkedOfPerson, new PersonComparator());
+        System.out.println(linkedOfPerson);
 
 
     }

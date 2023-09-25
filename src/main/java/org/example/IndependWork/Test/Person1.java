@@ -1,12 +1,12 @@
-package org.example.HomeWork._13_09_23;
+package org.example.IndependWork.Test;
 
 import java.util.Objects;
 
-public class Person implements Comparable<Person>{
+public class Person1 implements Comparable<Person1>{
     private String name;
     private int age;
 
-    public Person(String name, int age) {
+    public Person1(String name, int age) {
         this.name = name;
         this.age = age;
     }
@@ -24,7 +24,7 @@ public class Person implements Comparable<Person>{
 //    }
 
     @Override
-    public int compareTo(Person o) {
+    public int compareTo(Person1 o) {
         return this.name.compareTo(o.name);
     }
 
@@ -32,8 +32,8 @@ public class Person implements Comparable<Person>{
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Person person = (Person) o;
-        return age == person.age && Objects.equals(name, person.name);
+        Person1 person1 = (Person1) o;
+        return age == person1.age && Objects.equals(name, person1.name);
     }
 
     @Override

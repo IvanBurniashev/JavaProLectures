@@ -369,9 +369,9 @@ public class Tasks {
     }
 
     // TODO: 23.09.2023  * Создать LinkedList с объектами вашего собственного класса и отсортировать их по нескольким критериям.
-    LinkedList<Person> sortingByMultipleCriteria(LinkedList<Person> linkedList){
-
-        return null;
+    LinkedList<Person> sortingByMultipleCriteria(LinkedList<Person> linkedList) {
+        Collections.sort(linkedList, new PersonComparator());
+        return linkedList;
     }
 
 }
