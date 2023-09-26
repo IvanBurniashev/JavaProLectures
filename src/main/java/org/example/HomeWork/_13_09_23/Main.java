@@ -118,8 +118,8 @@ public class Main {
         arrayPerson.add(new Person("Maximilian", 40));
         arrayPerson.add(new Person("Anton", 35));
         arrayPerson.add(new Person("Anton", 35));
-        arrayPerson.add(new Person("Anton", 35));
-        arrayPerson.add(new Person("Anton", 35));
+        arrayPerson.add(new Person("Anton", 36));
+        arrayPerson.add(new Person("Anton", 40));
         arrayPerson.add(new Person("Maximilian", 41));
         arrayPerson.add(new Person("Veronika", 18));
         arrayPerson.add(new Person("Veronika", 18));

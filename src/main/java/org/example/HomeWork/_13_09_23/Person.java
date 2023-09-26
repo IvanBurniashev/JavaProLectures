@@ -2,7 +2,7 @@ package org.example.HomeWork._13_09_23;
 
 import java.util.Objects;
 
-public class Person implements Comparable<Person>{
+public class Person implements Comparable<Person> {
     private String name;
     private int age;
 
@@ -18,14 +18,24 @@ public class Person implements Comparable<Person>{
     public String getName() {
         return name;
     }
+
 //    @Override
 //    public int compareTo(Person o) {
-//        return Integer.compare(this.age, o.age);
+//        return Integer.compare(this.getAge(),o.getAge());
 //    }
 
+//    @Override
+//    public int compareTo(Person o) {
+//        return this.name.compareTo(o.name);
+//    }
+
+    //Вариант попытки использования compareTo() в качестве проверки уникальности (для запуска и хэшкода и икуалс)
     @Override
     public int compareTo(Person o) {
-        return this.name.compareTo(o.name);
+        if (this.name.compareTo(o.name) != 0) {
+            return this.name.compareTo(o.name);
+        }
+        return Integer.compare(this.getAge(), o.getAge());
     }
 
     @Override

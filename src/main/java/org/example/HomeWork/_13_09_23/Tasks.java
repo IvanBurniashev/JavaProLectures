@@ -300,7 +300,9 @@ public class Tasks {
     ArrayList<Person> returnsUniqueElements(ArrayList<Person> personArrayList) {
         for (int i = 0; i < personArrayList.size(); i++) {
             for (int j = i + 1; j < personArrayList.size(); j++) {
-                if (personArrayList.get(j).equals(personArrayList.get(i))) {
+                if (personArrayList.get(j).compareTo(personArrayList.get(i)) == 0) { //попытка сравнения по compareTo
+//                if (personArrayList.get(j).compareTo(personArrayList.get(i)) == 0) { //попытка сравнения по compareTo
+//                if (personArrayList.get(j).equals(personArrayList.get(i))) { //изначальный код
                     personArrayList.remove(j);
                     j--;
                 }
