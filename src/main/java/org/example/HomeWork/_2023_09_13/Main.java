@@ -2,6 +2,7 @@ package org.example.HomeWork._2023_09_13;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.LinkedList;
 
 public class Main {
@@ -276,10 +277,24 @@ public class Main {
         // TODO: 23.09.2023  * Создать LinkedList с объектами вашего собственного класса и отсортировать их по нескольким критериям.
         System.out.println("======================================================\n" +
                 "* Создать LinkedList с объектами вашего собственного класса и отсортировать их по нескольким критериям.");
+        //Анонимный класс
+//        Comparator<Person> personComparator = new Comparator<Person>() {
+//            @Override
+//            public int compare(Person o1, Person o2) {
+//                return Integer.compare(o2.getAge(), o1.getAge());
+//            }
+//        };
         System.out.println(linkedOfPerson);
 //        System.out.println(tasks.sortingByMultipleCriteria(linkedOfPerson));
-        Collections.sort(linkedOfPerson, new PersonComparator());
+//        Collections.sort(linkedOfPerson, new PersonComparator());
+        Collections.sort(linkedOfPerson, new Comparator<Person>() {
+            @Override
+            public int compare(Person o1, Person o2) {
+                return o2.getName().compareTo(o1.getName());
+            }
+        });
         System.out.println(linkedOfPerson);
+
 
 
     }

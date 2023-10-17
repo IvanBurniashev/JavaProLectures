@@ -15,10 +15,6 @@ public class StrimEx {
 
         List<String> list2 = Arrays.asList("1", "2", "3", "4", "5", "6", "7", "8", "9", "10");
 
-        List<String> list3 = list.stream()
-                .
-                .toList();
-        System.out.println(list3);
 
     }
 }
