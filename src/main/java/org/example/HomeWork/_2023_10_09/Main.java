@@ -14,7 +14,6 @@ public class Main {
          //     * <p>
          //     * <p>
          //     * <p>
-         //     * -- Получить список слов которые содержат только уникальные символы
 
          //Задание 1: Фильтрация списка целых чисел на нечетные числа
          List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
@@ -47,13 +46,14 @@ public class Main {
         m3(numbers);
         //     * -- Найти суммы чисел кратных 3 и 5
         m4(numbers);
-             List<String> strings = Arrays.asList("1", "2", "3", "4", "5");
+        List<String> strings = Arrays.asList("1", "2", "3", "4", "5");
         //     * -- Преобразовать список строк в список чисел
         m5(strings);
         //     * -- Отфильтровать строки на те которые начинаются на 'a' и преобразовать из в верхний регистр
         List<String> words = Arrays.asList("apple", "banana", "apricot", "cherry", "kiwi");
-
-
+        m6(words);
+        //     * -- Получить список слов которые содержат только уникальные символы
+        m7(words);
 
 
     }
@@ -105,7 +105,7 @@ public class Main {
     }
 
     //     * -- Преобразовать список строк в список чисел
-    private static void m5(List<String> list){
+    private static void m5(List<String> list) {
         List<Integer> list1 = list.stream()
                 .map(el -> Integer.parseInt(el))
                 .toList();
@@ -113,7 +113,19 @@ public class Main {
     }
 
     //     * -- Отфильтровать строки на те которые начинаются на 'a' и преобразовать из в верхний регистр
+    private static void m6(List<String> list) {
+        list.stream()
+                .filter(el -> el.startsWith("a"))
+                .map(el -> el.toUpperCase())
+                .forEach(System.out::println);
+    }
 
+    //     * -- Получить список слов которые содержат только уникальные символы
+    private static void m7(List<String> list) {
+        list.stream()
+                .filter(el -> el.chars().distinct().count() == el.length())
+                .forEach(System.out::println);
+    }
 
 
 }
