@@ -2,10 +2,9 @@ package org.example.HomeWork._2023_10_11;
 
 import org.example.ClassWork._2023_10_11.Person;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Main {
     public static void main(String[] args) {
@@ -14,6 +13,7 @@ public class Main {
         m3();
         m4();
         m5();
+        m6();
     }
 
     /**
@@ -80,12 +80,42 @@ public class Main {
      */
     private static void m5() {
         String ss = "KikJhYggfTxgf";
-        long cnt = ss.chars()
+        //решение через .filter()
+        long cntUP = ss.chars()
                 .filter(Character::isUpperCase)
                 .count();
-        System.out.println("Is UP: " + cnt);
-        ;
+        long cntLOW = ss.chars()
+                .filter(Character::isLowerCase)
+                .count();
+        System.out.println("Is UP: " + cntUP);
+        System.out.println("Is LOW: " + cntLOW);
+
+        //решение через .colllect()
+        Map<Boolean, Long> booleanUpAndLow = ss.chars()
+                .mapToObj(el -> (char) el)
+                .collect(Collectors.partitioningBy(Character::isUpperCase, Collectors.counting()));
+        System.out.println(booleanUpAndLow);
     }
 
+    /**
+     * Определите все символьные строки максимальной длины в заданном конечном
+     * потоке символьных строк. через Optional
+     */
+    private static void m6() {
+        Stream<String> stream = Stream.of("we", "wee", "qwer", "oooo");
+//        Optional<Map.Entry<Integer, List<String>>> max = stream.collect(Collectors.maxBy((a,b) ->   ))
+        Stream<String> stringStream = Stream.of("abc", "abcdef", "xy", "xyz", "pqrst");
 
+        Map<Integer, List<String>> result = stringStream
+                .collect(Collectors.groupingBy(String::length,Collectors.toList()));
+//                .entrySet();
+        System.out.println(result);
+//        Set<Map.Entry<Integer, List<String>>> result1 = stringStream
+//                .collect(Collectors.groupingBy(String::length,Collectors.toList()))
+//                .entrySet();
+//        System.out.println(result1);
+//                .stream()
+//                .max(Map.Entry.comparingByKey());
+//        System.out.println(result);
+    }
 }

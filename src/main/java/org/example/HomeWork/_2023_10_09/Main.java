@@ -72,6 +72,7 @@ public class Main {
         System.out.println(list2);
 
         //решение через Collectors
+        System.out.println("        //решение через Collectors");
         Map<Boolean, List<Integer>> evenAndOdd = list.stream()
                 .collect(Collectors.partitioningBy(el -> el % 2 == 0));
         System.out.println(evenAndOdd);
