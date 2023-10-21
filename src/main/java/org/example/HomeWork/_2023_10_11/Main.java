@@ -103,19 +103,12 @@ public class Main {
      */
     private static void m6() {
         Stream<String> stream = Stream.of("we", "wee", "qwer", "oooo");
-//        Optional<Map.Entry<Integer, List<String>>> max = stream.collect(Collectors.maxBy((a,b) ->   ))
-        Stream<String> stringStream = Stream.of("abc", "abcdef", "xy", "xyz", "pqrst");
-
-        Map<Integer, List<String>> result = stringStream
-                .collect(Collectors.groupingBy(String::length,Collectors.toList()));
-//                .entrySet();
+        Optional<Map.Entry<Integer, List<String>>> result = stream
+                .collect(Collectors.groupingBy(String::length, Collectors.toList()))
+                .entrySet()
+                .stream()
+                .max(Map.Entry.comparingByKey());
         System.out.println(result);
-//        Set<Map.Entry<Integer, List<String>>> result1 = stringStream
-//                .collect(Collectors.groupingBy(String::length,Collectors.toList()))
-//                .entrySet();
-//        System.out.println(result1);
-//                .stream()
-//                .max(Map.Entry.comparingByKey());
-//        System.out.println(result);
     }
+
 }
