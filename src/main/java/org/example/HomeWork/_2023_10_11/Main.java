@@ -1,12 +1,17 @@
 package org.example.HomeWork._2023_10_11;
 
+import com.github.javafaker.Faker;
+
 import org.example.ClassWork._2023_10_11.Person;
 
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class Main {
+    private static final Faker FAKER = new Faker();
+
     public static void main(String[] args) {
         m1();
         m2();
@@ -14,6 +19,10 @@ public class Main {
         m4();
         m5();
         m6();
+        m7();
+        m8();
+        m9();
+        m10();
     }
 
     /**
@@ -110,5 +119,78 @@ public class Main {
                 .max(Map.Entry.comparingByKey());
         System.out.println(result);
     }
+
+    /**
+     * Дан список сотрудников, у каждого из которых есть поле "salary".
+     * Необходимо найти среднюю зарплату сотрудников, работающих на должности "developer"
+     * в компаниях, которые находятся в городах, начинающихся на букву "M".
+     */
+    private static void m7() {
+        List<Employee> list = Arrays.asList(
+                new Employee(FAKER.name().name(), 25, 1500, "developer", new Company(FAKER.company().name(), FAKER.address().cityName())),
+                new Employee(FAKER.name().name(), 26, 1300, "developer", new Company(FAKER.company().name(), FAKER.address().cityName())),
+                new Employee(FAKER.name().name(), 22, 2000, "developer", new Company(FAKER.company().name(), FAKER.address().cityName())),
+                new Employee(FAKER.name().name(), 28, 1800, "developer", new Company(FAKER.company().name(), FAKER.address().cityName())),
+                new Employee(FAKER.name().name(), 35, 1200, "developer", new Company(FAKER.company().name(), FAKER.address().cityName())),
+                new Employee(FAKER.name().name(), 30, 1100, "developer", new Company(FAKER.company().name(), FAKER.address().cityName())),
+                new Employee(FAKER.name().name(), 20, 1000, "developer", new Company(FAKER.company().name(), FAKER.address().cityName())),
+                new Employee(FAKER.name().name(), 40, 2100, "manager", new Company(FAKER.company().name(), FAKER.address().cityName())),
+                new Employee(FAKER.name().name(), 45, 2200, "developer", new Company(FAKER.company().name(), FAKER.address().cityName())),
+                new Employee(FAKER.name().name(), 38, 1500, "manager", new Company(FAKER.company().name(), FAKER.address().cityName()))
+        );
+        OptionalDouble result = list.stream()
+                .filter(employee -> employee.getPosition() == "developer" && employee.getCompany().getCity().startsWith("M"))
+                .peek(System.out::println)
+                .flatMapToInt(el -> IntStream.of(el.getSalary()))
+                .average();
+        System.out.println(result);
+    }
+
+    /**
+     * У нас есть список списков numbers,
+     * и мы хотим получить все четные числа из этих списков.
+     * Мы используем flatMap, чтобы преобразовать каждый внутренний
+     * список в поток чисел, а затем фильтруем только четные числа.
+     * Результат: Even numbers: [2, 4, 6].
+     */
+    private static void m8() {
+        List<List<Integer>> numbers = Arrays.asList(
+                Arrays.asList(1, 2),
+                Arrays.asList(3, 4),
+                Arrays.asList(5, 6)
+        );
+        List<Integer> list = numbers.stream()
+                .flatMap(el -> el.stream())
+                .filter(el -> el % 2 == 0)
+                .toList();
+        System.out.println(list);
+    }
+
+    /**
+     * Есть два списка list1 и list2, и мы
+     * хотим получить все возможные комбинации сумм чисел из обоих списков.
+     * Мы используем flatMap, чтобы преобразовать каждый элемент из list1 в поток,
+     * затем применяем map, чтобы создать поток сумм чисел из list1 и list2,
+     * и наконец, собираем все значения в combinedList.
+     * Результат: Combined list: [5, 6, 7, 6, 7, 8, 7, 8, 9].
+     */
+    private static void m9() {
+        List<Integer> list1 = Arrays.asList(1, 2, 3);
+        List<Integer> list2 = Arrays.asList(4, 5, 6);
+        List<Integer> list = list1.stream()
+                .flatMap(number1 -> list2.stream().map(number2 -> number1 + number2))
+                .toList();
+        System.out.println(list);
+    }
+
+    private static void m10() {
+        List<Integer> list = Arrays.asList(1, 2, 3);
+        list.stream()
+                .flatMap(el -> list.stream())
+                .map(el1 -> List.of(el1))
+                .forEach(System.out::println);
+
+    }
+
 
 }
