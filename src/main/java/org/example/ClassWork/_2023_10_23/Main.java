@@ -3,10 +3,8 @@ package org.example.ClassWork._2023_10_23;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class Main {
@@ -33,8 +31,9 @@ public class Main {
         System.out.println(main.countTotalNames(listString));
         System.out.println(main.uniqueNames(stringString));
         System.out.println(main.countNamesContainingSubstring(stringString, "tt"));
-        System.out.println(main.namesWithLengthInRange(stringString,5,7));
+        System.out.println(main.namesWithLengthInRange(stringString, 5, 7));
         System.out.println(main.firstNNamesAlphabetically(stringString, 10));
+        main.topFiveCommonNames(stringString);
     }
 
     //**Подсчет общего числа имен в файле
@@ -60,19 +59,38 @@ public class Main {
                 .count();
     }
 
-//    **Нахождение имен, длина которых находится в заданном диапазоне
-    public List<String> namesWithLengthInRange(String fileName, int minLength, int maxLength){
+    //    **Нахождение имен, длина которых находится в заданном диапазоне
+    public List<String> namesWithLengthInRange(String fileName, int minLength, int maxLength) {
         return Arrays.stream(fileName.split(" "))
                 .filter(string -> string.length() > minLength && string.length() < maxLength)
                 .toList();
     }
 
-//    **Вывод первых N имен в алфавитном порядке
-    public List<String> firstNNamesAlphabetically(String fileName, int n){
+    //    **Вывод первых N имен в алфавитном порядке
+    public List<String> firstNNamesAlphabetically(String fileName, int n) {
         return Arrays.stream(fileName.split(" "))
                 .limit(n)
                 .sorted()
                 .toList();
+    }
+
+    //    **Нахождение пяти самых часто встречающихся имен в файле
+    public void topFiveCommonNames(String fileName) {
+        System.out.println("//решение методом .groupingBy()");
+        Arrays.stream(fileName.split(" "))
+                .collect(Collectors.groupingBy(key -> key, Collectors.counting()))
+                .entrySet().stream()
+                .sorted((key, value) -> Long.compare(value.getValue(), key.getValue()))
+                .limit(5)
+                .forEach(System.out::println);
+
+        System.out.println("//решение методом .toMap()");
+        Arrays.stream(fileName.split(" "))
+                .collect(Collectors.toMap(key -> key, key -> 1L, (count, el) -> count + el))
+                .entrySet().stream()
+                .sorted((key, value) -> Long.compare(value.getValue(), key.getValue()))
+                .limit(5)
+                .forEach(System.out::println);
     }
 
 }
