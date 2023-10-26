@@ -93,4 +93,10 @@ public class Main {
                 .forEach(System.out::println);
     }
 
+//    **Нахождение имен, которые начинаются на заданную букву и встречаются больше двух раз
+    public Set<String> namesStartingWithAndOccurMoreThanTwice(String fileName, char c){
+        return null;
+    }
+
+
 }
