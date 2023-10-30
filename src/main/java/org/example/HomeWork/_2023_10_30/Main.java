@@ -12,6 +12,7 @@ public class Main {
         System.out.println(calculator.factorial(5));
         System.out.println(calculator.findMax(new int[] {1,0,10,5,11}));
         System.out.println(calculator.isPrime(53));
+        System.out.println(calculator.sumOfDigits(123123));
         System.out.println("==========================");
         System.out.println(calculator.reverseString("abcd"));
         System.out.println(calculator.productOfArray(new int[]{1, 2, 3, 4}));

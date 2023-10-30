@@ -157,10 +157,11 @@ public class Calculator {
     //256 --- 2 + 5 + 6
     public int sumOfDigits(int number) {
         int sum = 0;
-        while (number > 0){
-//            a =
+        while (number != 0) {
+            sum += number % 10;
+            number /= 10;
         }
-        return 0;
+        return sum;
     }
 
     // 20. Проверка, является ли год високосным
