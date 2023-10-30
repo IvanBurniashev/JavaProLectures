@@ -158,7 +158,7 @@ public class Calculator {
     public int sumOfDigits(int number) {
         int sum = 0;
         while (number > 0){
-            a =
+//            a =
         }
         return 0;
     }
