@@ -4,8 +4,8 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
-import java.util.function.Function;
 import java.util.stream.Collectors;
+
 
 public class Main {
     static List<String> listString = new ArrayList<>();
@@ -34,6 +34,7 @@ public class Main {
         System.out.println(main.namesWithLengthInRange(stringString, 5, 7));
         System.out.println(main.firstNNamesAlphabetically(stringString, 10));
         main.topFiveCommonNames(stringString);
+//        main.namesStartingWithAndOccurMoreThanTwice(stringString, 'A');
     }
 
     //**Подсчет общего числа имен в файле
@@ -48,7 +49,7 @@ public class Main {
     //    **Нахождение уникальных имен в файле
     public Set<String> uniqueNames(String fileName) {
         return Arrays.stream(fileName.split(" "))
-                .distinct()
+//                .distinct()
                 .collect(Collectors.toSet());
     }
 
@@ -90,13 +91,21 @@ public class Main {
                 .entrySet().stream()
                 .sorted((key, value) -> Long.compare(value.getValue(), key.getValue()))
                 .limit(5)
+                .map(entry -> "'" + entry.getKey() + "'," + " count = " + entry.getValue())
+                .collect(Collectors.toCollection(LinkedHashSet::new))
+                .stream()
                 .forEach(System.out::println);
     }
 
 //    **Нахождение имен, которые начинаются на заданную букву и встречаются больше двух раз
-    public Set<String> namesStartingWithAndOccurMoreThanTwice(String fileName, char c){
-        return null;
-    }
-
+//    public void namesStartingWithAndOccurMoreThanTwice(String fileName, char c){
+//        System.out.println("//    **Нахождение имен, которые начинаются на заданную букву и встречаются больше двух раз\n");
+//        Set<String,Long> set = Arrays.stream(fileName.split(" "))
+//                .collect(Collectors.groupingBy(key -> key,Collectors.counting()))
+//                .entrySet().stream()
+//                .filter(entry -> entry.getValue() > 1 && entry.getKey().startsWith(Character.toString(c)))
+//                .collect(Collectors.toSet());
+//        return set;
+//    }
 
 }

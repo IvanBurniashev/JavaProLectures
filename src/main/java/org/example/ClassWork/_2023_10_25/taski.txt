@@ -14,10 +14,3 @@
 
 Требования:
 Реализуйте метод filterAndSaveStudentsByGrade(List<Student> students, double gradeThreshold, String filename), который будет сохранять студентов с оценкой выше gradeThreshold в файл.
-
-
-*****Задание 3. Средний балл студентов
-Описание: Напишите метод, который вычисляет средний балл всех студентов из файла.
-
-Требования:
-Реализуйте метод double calculateAverageGrade(String filename), который возвращает средний балл студентов.
